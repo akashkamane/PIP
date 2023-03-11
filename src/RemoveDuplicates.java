@@ -47,7 +47,7 @@ public class RemoveDuplicates {
     public static void main(String[] args) {
         String s = "abbaca";
         String s2 = "azxxzy";
-        System.out.println("---------------- Stack -----------------------------------");
+        System.out.println("---------------- Using Stack -----------------------------------");
 
         long startTime = System.nanoTime();
 
@@ -59,7 +59,7 @@ public class RemoveDuplicates {
 
         System.out.println("Time taken: " + elapsedTime + " µs");
 
-        System.out.println("---------------- Two Pointers -----------------------------------");
+        System.out.println("---------------- Two Pointers Algorithm -----------------------------------");
 
         long startTime2 = System.nanoTime();
 

@@ -59,8 +59,8 @@ public class RansomNote {
 
 
     public static void main(String[] args) {
-        String ransomNote = "Aab";
-        String magazine = "AKASHBE";
+        String ransomNote = "aa";
+        String magazine = "Aba";
 
         System.out.println("---------------- Arrays -----------------------------------");
 

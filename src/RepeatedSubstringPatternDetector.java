@@ -11,6 +11,11 @@ public class RepeatedSubstringPatternDetector {
      * @return true if input can be constructed by repeating a substring, false otherwise
      */
     public static boolean repeatedSubstringPattern(String input) {
+
+        if (input == null || input.isEmpty()) {
+            return false;
+        }
+
         int n = input.length();
 
         // Iterate over all possible substring lengths
@@ -41,6 +46,11 @@ public class RepeatedSubstringPatternDetector {
      * @return true if input can be constructed by repeating a substring, false otherwise
      */
     public static boolean repeatedSubstringPatternwithKMP(String input) {
+
+        if (input == null || input.isEmpty()) {
+            return false;
+        }
+
         int n = input.length();
 
         // Construct the prefix table for the input string input.
@@ -67,15 +77,14 @@ public class RepeatedSubstringPatternDetector {
 
 
         public static void main(String[] args) {
-        String input1 = "abab";
-        String input2 = "ababqwjhab";
-        String input3 = "abcabcabc";
+        String input1 = "blabla";
+        String input2 = "aba";
+        String input3 = "abcabcabcabc";
 
 
         System.out.println("------------------ Brute Force Algorithm ----------------------------");
         long startTime = System.nanoTime();
 
-        // Test the method with the given inputs
         System.out.println(repeatedSubstringPattern(input1)); // Output: true
         System.out.println(repeatedSubstringPattern(input2)); // Output: false
         System.out.println(repeatedSubstringPattern(input3)); // Output: true
@@ -88,9 +97,9 @@ public class RepeatedSubstringPatternDetector {
 
         long startTime2 = System.nanoTime();
 
-//        System.out.println(repeatedSubstringPatternwithKMP(input1)); // Output: true
-        System.out.println(repeatedSubstringPatternwithKMP(input2)); // Output: false
-        System.out.println(repeatedSubstringPatternwithKMP(input3)); // Output: true
+        System.out.println(repeatedSubstringPatternwithKMP(input1)); // Output: true
+//        System.out.println(repeatedSubstringPatternwithKMP(input2)); // Output: false
+//        System.out.println(repeatedSubstringPatternwithKMP(input3)); // Output: true
 
         long endTime2 = System.nanoTime();
         long elapsedTime2 = (endTime2 - startTime2) / 1000; // convert nanoseconds to microseconds

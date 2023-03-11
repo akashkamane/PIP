@@ -115,7 +115,7 @@ public class RemoveDuplicateWithK {
         long elapsedTime2 = (endTime2 - startTime2) / 1000; // convert nanoseconds to microseconds
         System.out.println("Time taken: " + elapsedTime2 + " µs");
 
-        System.out.println("----------------  String Builder ---------------------------------");
+        System.out.println("----------------  Stack using StringBuilder ---------------------------------");
 
         long startTime3 = System.nanoTime();
 

@@ -16,10 +16,14 @@ public class RepeatedStringMatch {
      * @return The minimum number of times the firstValue needs to be repeated or -1 if not possible
      */
     public static int repeatedStringMatch(String firstValue, String secondValue) {
+
+        if (firstValue == null || secondValue == null || firstValue.isEmpty() || secondValue.isEmpty()) {
+            return -1;
+        }
+
         // Create a StringBuilder object to hold the repeated string.
         StringBuilder repeatedA = new StringBuilder(firstValue);
 
-        // Set the number of repeats to 1.
         int numRepeats = 1;
 
         // Repeat the firstValue until the length of the repeatedA is at least the length of secondValue.
@@ -60,6 +64,11 @@ public class RepeatedStringMatch {
      * @return The minimum number of times the firstValue needs to be repeated or -1 if not possible
      */
     public static int repeatedStringMatchWithKPM(String firstValue, String secondValue) {
+
+        if (firstValue == null || secondValue == null || firstValue.isEmpty() || secondValue.isEmpty()) {
+            return -1;
+        }
+
         // Compute the LPS array for the secondValue using the KMP algorithm.
         int[] lps = computeLPS(secondValue);
 
@@ -128,28 +137,29 @@ public class RepeatedStringMatch {
 
     public static void main(String[] args) {
 
+        System.out.println("------------------ Brute Force Algorithm ----------------------------");
         long startTime = System.nanoTime();
 
-        System.out.println(repeatedStringMatch("abc", "abcabc")); // 2
-        System.out.println(repeatedStringMatch("abcd", "cdabcdabcdabcdab")); // 3
+//        System.out.println(repeatedStringMatch("abc", "abcabc")); // 2
+        System.out.println(repeatedStringMatch("abcd", "cdabcdab")); // 3
 
         long endTime = System.nanoTime();
         long elapsedTime = (endTime - startTime) / 1000; // convert nanoseconds to microseconds
 
-        System.out.println("Time taken: " + elapsedTime + " µs");
-
-        System.out.println("---------------- With KMP -----------------------------------");
-
-        long startTime2 = System.nanoTime();
-
-        System.out.println(repeatedStringMatchWithKPM("abc", "abcabc")); // Output: false
-        System.out.println(repeatedStringMatchWithKPM("abcd", "cdabcdab")); // Output: true
-
-        long endTime2 = System.nanoTime();
-        long elapsedTime2 = (endTime2 - startTime2) / 1000; // convert nanoseconds to microseconds
-
-        System.out.println("Time taken: " + elapsedTime2 + " µs");
-
+//        System.out.println("Time taken: " + elapsedTime + " µs");
+//
+//        System.out.println("----------------  KMP Algorithm -----------------------------------");
+//
+//        long startTime2 = System.nanoTime();
+//
+//        System.out.println(repeatedStringMatchWithKPM("abc", "abcabc")); // Output: false
+//        System.out.println(repeatedStringMatchWithKPM("abcd", "cdabcdab")); // Output: true
+//
+//        long endTime2 = System.nanoTime();
+//        long elapsedTime2 = (endTime2 - startTime2) / 1000; // convert nanoseconds to microseconds
+//
+//        System.out.println("Time taken: " + elapsedTime2 + " µs");
+//
 
 
     }
